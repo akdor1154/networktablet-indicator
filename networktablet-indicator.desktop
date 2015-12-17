@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Networktablet Indicator
+Comment=AppIndicator to control Networktablet
+Exec=networktablet-indicator
+Icon=input-tablet
+StartupNotify=false
+NoDisplay=true
+X-GNOME-Autostart-Phase=Application
