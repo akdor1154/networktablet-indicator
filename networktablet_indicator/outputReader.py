@@ -51,6 +51,7 @@ class OutputReader(Thread):
 
     def quit(self):
         if self.is_running():
+            print('waiting for lock')
             with self.starting_lock:
                 print('killing')
                 self._p.terminate()
@@ -58,3 +59,6 @@ class OutputReader(Thread):
                 self._p.wait()
                 print('dead')
                 os.close(self.slave)
+        else:
+            self._p.wait()
+            os.close(self.slave)
